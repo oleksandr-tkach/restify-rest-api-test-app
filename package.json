@@ -1,0 +1,36 @@
+{
+  "name": "restify-api",
+  "version": "1.0.0",
+  "description": "Starter project for a REST API with Node.js, Restify & MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oleksandr-tkach/restify-starter.git"
+  },
+  "keywords": [
+    "API",
+    "MongoDB",
+    "Restify"
+  ],
+  "author": "Alex Tkach <alex.tkach@neti-soft.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oleksandr-tkach/restify-starter/issues"
+  },
+  "homepage": "https://github.com/oleksandr-tkach/restify-starter#readme",
+  "dependencies": {
+    "bunyan-winston-adapter": "^0.2.0",
+    "lodash": "^4.17.2",
+    "mongoose": "^4.7.2",
+    "mongoose-api-query": "^0.1.1-pre",
+    "mongoose-createdmodified": "0.0.2",
+    "mongoose-validate": "0.0.5",
+    "restify": "^4.3.0",
+    "restify-errors": "^4.3.0",
+    "restify-router": "^0.4.2",
+    "winston": "^2.3.0"
+  }
+}

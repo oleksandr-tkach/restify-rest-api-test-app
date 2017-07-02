@@ -37,7 +37,7 @@ class Base {
 
     getById() {
         return (req, res, next) => {
-            this.model.findOne({ _id: req.params.id }, function(err, doc) {
+            this.model.findOne({ _id: req.params.id }, (err, doc) => {
                 if (err) {
                     log.error(err);
                     return next(new errors.InvalidContentError(err.errors.name.message));
@@ -52,11 +52,10 @@ class Base {
         return (req, res, next) => {
             let data = req.body || {};
             let doc = new this.model(data);
-            doc.save(function(err) {
+            doc.save((err) => {
                 if (err) {
                     log.error(err);
                     return next(new errors.InternalError(err.message));
-                    next();
                 }
                 res.send(201);
                 next();
@@ -72,14 +71,14 @@ class Base {
                     _id: req.params.id
                 });
             }
-            this.model.findOne({ _id: req.params.id }, function(err, doc) {
+            this.model.findOne({ _id: req.params.id }, (err, doc) => {
                 if (err) {
                     log.error(err);
                     return next(new errors.InvalidContentError(err.errors.name.message));
                 } else if (!doc) {
                     return next(new errors.ResourceNotFoundError('The resource you requested could not be found.'))
                 }
-                this.model.update({ _id: data._id }, data, function(err) {
+                this.model.update({ _id: data._id }, data, (err) => {
                     if (err) {
                         log.error(err);
                         return next(new errors.InvalidContentError(err.errors.name.message));
@@ -93,7 +92,7 @@ class Base {
 
     delete() {
         return (req, res, next) => {
-            this.model.remove({ _id: req.params.id }, function(err) {
+            this.model.remove({ _id: req.params.id }, (err) => {
                 if (err) {
                     log.error(err);
                     return next(new errors.InvalidContentError(err.errors.name.message));

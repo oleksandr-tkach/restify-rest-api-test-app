@@ -24,7 +24,7 @@ class CommentCtrl {
                     query.movie_id = new ObjectID(req.params.movie_id);
                 } catch (err) {
                     log.error(err);
-                    return next(new errors.InvalidContentError(err.message));
+                    return next(new errors.InvalidArgumentError(err.message));
                 }
             }
             return this.model.find(query)
@@ -34,7 +34,7 @@ class CommentCtrl {
                 })
                 .catch((err) => {
                     log.error(err);
-                    return next(new errors.InvalidContentError(err.errors.name.message));
+                    return next(new errors.BadRequestError(err.errors.name.message));
                 });
         };
     }
@@ -56,7 +56,7 @@ class CommentCtrl {
                 })
                 .catch((err) => {
                     log.error(err);
-                    return next(new errors.InternalError(err.message));
+                    return next(new errors.BadRequestError(err.message));
                 });
         };
     }

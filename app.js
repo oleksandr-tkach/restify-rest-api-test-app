@@ -16,6 +16,7 @@ const mongoose = require('mongoose');
 global.log = new winston.Logger({
     transports: [
         new winston.transports.Console({
+            silent: config.debugger.silent,
             level: 'info',
             timestamp: () => {
                 return new Date().toString();
@@ -80,3 +81,5 @@ server.listen(config.port, () => {
     global.db = mongoose.connect(config.db.uri);
 
 });
+
+module.exports = server;

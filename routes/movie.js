@@ -44,7 +44,7 @@ class MovieCtrl {
                 })
                 .catch((err) => {
                     log.error(err);
-                    return next(new errors.InvalidContentError(err.errors.name.message));
+                    return next(new errors.BadRequestError(err.errors.name.message));
                 });
         };
     }
@@ -56,7 +56,7 @@ class MovieCtrl {
             if (_.isEmpty(data) || !data.title) {
                 const noTitleError = new Error('No title provided');
                 log.error(noTitleError);
-                return next(new errors.InternalError(noTitleError.message));
+                return next(new errors.BadRequestError(noTitleError.message));
             }
             const omdbApi = new OmdbApi();
             return omdbApi.getByTitle(data.title)
@@ -76,7 +76,7 @@ class MovieCtrl {
                 })
                 .catch((err) => {
                     log.error(err);
-                    return next(new errors.InternalError(err.message));
+                    return next(new errors.BadRequestError(err.message));
                 });
         };
     }

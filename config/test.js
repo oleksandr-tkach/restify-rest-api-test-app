@@ -2,10 +2,10 @@
 
 module.exports = {
     debugger: {
-        silent: false
+        silent: true
     },
     db: {
-        uri: 'mongodb://127.0.0.1:27017/movie-app'
+        uri: 'mongodb://127.0.0.1:27017/movie-app-test'
     },
     omdbapi: {
         base: 'http://www.omdbapi.com',

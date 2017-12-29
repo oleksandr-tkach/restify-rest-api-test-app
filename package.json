@@ -8,29 +8,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oleksandr-tkach/restify-starter.git"
+    "url": "https://github.com/oleksandr-tkach/restify-rest-api-test-app"
   },
   "keywords": [
     "API",
     "MongoDB",
     "Restify"
   ],
-  "author": "Alex Tkach <alex.tkach@neti-soft.com>",
+  "author": "Alex Tkach <oleksandr.tkach.ua@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oleksandr-tkach/restify-starter/issues"
+    "url": "https://github.com/oleksandr-tkach/restify-rest-api-test-app/issues"
   },
-  "homepage": "https://github.com/oleksandr-tkach/restify-starter#readme",
+  "homepage": "https://github.com/oleksandr-tkach/restify-rest-api-test-app#readme",
   "dependencies": {
     "bunyan-winston-adapter": "^0.2.0",
     "lodash": "^4.17.2",
     "mongoose": "^4.7.2",
-    "mongoose-api-query": "^0.1.1-pre",
     "mongoose-createdmodified": "0.0.2",
     "mongoose-validate": "0.0.5",
+    "request": "^2.83.0",
     "restify": "^4.3.0",
     "restify-errors": "^4.3.0",
     "restify-router": "^0.4.2",
+    "url-join": "^2.0.2",
     "winston": "^2.3.0"
   }
 }

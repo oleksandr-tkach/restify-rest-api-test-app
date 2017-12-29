@@ -1,14 +1,15 @@
 'use strict';
 
-/**
- * Module Dependencies
- */
-const UserRoutes = require('./user');
+const MovieRoutes = require('./movie');
+const CommentRoutes = require('./comment');
 
 class Routes {
-    constructor () {
-        let user = new UserRoutes();
-        user.router.applyRoutes(server, '/user');
+    constructor() {
+        const movies = new MovieRoutes();
+        const comments = new CommentRoutes();
+
+        movies.router.applyRoutes(server, '/movies');
+        comments.router.applyRoutes(server, '/comments');
     }
 }
 

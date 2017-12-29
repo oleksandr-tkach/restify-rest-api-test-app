@@ -18,7 +18,7 @@ global.log = new winston.Logger({
         new winston.transports.Console({
             level: 'info',
             timestamp: () => {
-                return new Date().toString()
+                return new Date().toString();
             },
             json: true
         }),
@@ -29,16 +29,16 @@ global.log = new winston.Logger({
  * Initialize Server
  */
 global.server = restify.createServer({
-    name : config.name,
-    log : bunyanWinston.createAdapter(log),
+    name: config.name,
+    log: bunyanWinston.createAdapter(log),
 });
 
 /**
  * Middleware
  */
-server.use(restify.jsonBodyParser({ mapParams: true }));
+server.use(restify.jsonBodyParser({mapParams: true}));
 server.use(restify.acceptParser(server.acceptable));
-server.use(restify.queryParser({ mapParams: true }));
+server.use(restify.queryParser({mapParams: true}));
 server.use(restify.fullResponse());
 
 /**
@@ -46,24 +46,24 @@ server.use(restify.fullResponse());
  */
 server.on('uncaughtException', (req, res, route, err) => {
     log.error(err.stack);
-    res.send(err)
+    res.send(err);
 });
 
 /**
  * Lift Server, Connect to DB & Bind Routes
-*/
+ */
 server.listen(config.port, () => {
 
     mongoose.connection.on('error', (err) => {
         log.error('Mongoose default connection error: ' + err);
-        process.exit(1)
+        process.exit(1);
     });
 
     mongoose.connection.on('open', (err) => {
 
         if (err) {
             log.error('Mongoose default connection error: ' + err);
-            process.exit(1)
+            process.exit(1);
         }
 
         log.info(
@@ -77,6 +77,6 @@ server.listen(config.port, () => {
 
     });
 
-    global.db = mongoose.connect(config.db.uri)
+    global.db = mongoose.connect(config.db.uri);
 
 });

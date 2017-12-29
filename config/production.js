@@ -5,7 +5,7 @@ module.exports = {
         silent: false
     },
     db: {
-        uri: 'mongodb://127.0.0.1:27017/movie-app'
+        uri: 'mongodb://alex:tkach@ds133127.mlab.com:33127/netguru-rest-app'
     },
     omdbapi: {
         base: 'http://www.omdbapi.com',

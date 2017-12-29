@@ -29,3 +29,4 @@ cover
 /.vscode/
 test-cover/
 .jshintrc
+package-lock.json

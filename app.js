@@ -19,10 +19,10 @@ global.log = new winston.Logger({
             silent: config.debugger.silent,
             level: 'info',
             timestamp: () => {
-                return new Date().toString();
+                return new Date().toString()
             },
             json: true
-        }),
+        })
     ]
 });
 
@@ -31,7 +31,7 @@ global.log = new winston.Logger({
  */
 global.server = restify.createServer({
     name: config.name,
-    log: bunyanWinston.createAdapter(log),
+    log: bunyanWinston.createAdapter(log)
 });
 
 /**

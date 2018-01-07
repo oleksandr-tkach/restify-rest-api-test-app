@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * Module Dependencies
- */
 const _ = require('lodash');
 
 var common = {

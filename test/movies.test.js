@@ -65,14 +65,14 @@ describe('movie routes tests', () => {
                 .send({
                     title: MovieObj.Title
                 }).end(() => {
-                request(app).post('/movies')
-                    .send({
-                        title: MovieObj.Title
-                    })
-                    .end((err, res) => {
-                        expect(res.statusCode).to.equal(400);
-                        done();
-                    });
+                    request(app).post('/movies')
+                        .send({
+                            title: MovieObj.Title
+                        })
+                        .end((err, res) => {
+                            expect(res.statusCode).to.equal(400);
+                            done();
+                        });
             });
         });
     });
